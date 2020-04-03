@@ -1,8 +1,9 @@
 from random import randrange, choice
 from uuid import uuid4
 from argparse import ArgumentParser
+from numpy import random as rd
 import sys
-import numpy as np
+
 
 
 
@@ -29,11 +30,13 @@ def main(fname, size, dist, lam):
             if dist == "unif": 
                 number_of_edges = randrange(1, size+1)
             elif dist == "poisson":
-                number_of_edges = np.random.poisson(int(lam)) + 1
+                number_of_edges = rd.poisson(int(lam)) + 1
                 if number_of_edges > size:
                     number_of_edges = size
             elif dist == "heavy":
-                number_of_edges = 10
+                number_of_edges = int((rd.pareto(1.0) + 1) * (1 + 0.05 * size))
+                if number_of_edges > size:
+                    number_of_edges = size
             
             #Defining connected nodes to node i
             sequence = list(range(size+1))

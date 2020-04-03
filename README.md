@@ -9,7 +9,9 @@ Contributor - Guilherme Lubk do Prado
 
 ### create\_graphs.py
 
-Run this script to create n random graphs and save it on a specific folder. You'll need to specify how many graphs do you intend to create (num\_graphs), how many nodes each graph will have (size), and how many connexions each node will have with its neighbours. The number of connexions per node is a random variable with probability distribution function: Uniform (unif), Poisson (poisson), and Heravy-Tail (heavy). Set this p. function by altering the "dist" parameter in the code. If you choose the Poisson p. function, specify the desired rate "lambda". The graphs will be store in a folder with the following name "test\_n\_num\_graphs\_dist\_choosenDist". If Poisson p. function has been choosen, the folder will be named "test\_n\_num\_graphs\_dist\_choosenDist\_lam\_choosenLambda".
+Run this script to create n random graphs and save it on a specific folder. You'll need to specify how many graphs do you intend to create (num\_graphs), how many nodes each graph will have (size), and how many connexions each node will have with its neighbours. The number of connexions per node is a random variable with probability distribution function: Uniform (unif), Poisson (poisson), and Heravy-Tail (heavy). Set this p. function by altering the "dist" parameter in the code. If you choose the Poisson p. function, specify the desired rate "lambda". The graphs will be store in a folder with the following name "test\_n\_num\_graphs\_dist\_chosenDist". If Poisson p. function has been choosen, the folder will be named "test\_n\_num\_graphs\_dist\_chosenDist\_lam\_chosenLambda".
+
+The Heavy-Tail distribution chosen was the Pareto p. distribution with alpha and X\_m equals to one multiplied by a correction factor equal to 5% the number of nodes. That means that, on average, 80% of the nodes will have less than 0.05*size connections and the remaining 20% of the nodes will have more connections than that (some being fully connected with the other nodes).
 
 ### generate\_graph.py
 

@@ -5,7 +5,9 @@ import math
 #For comparison, the number of graphs shold be high and constant
 num_graphs = 1
 size = 30
-dist = "poisson"
+# Distributions availlable:
+#   unif - poisson - heavy
+dist = "heavy"
 lam = 15
 
 folder = "tests_n_" + str(size) + "_dist_" + dist
